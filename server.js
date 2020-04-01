@@ -8,7 +8,7 @@ const app = express()
 
 db.connect()
 
-const port = config.port
+const port = process.env.PORT || config.port
 
 app.get('/api/players', (req,res) => {
     playerLib.getAllPlayers(function(err,players) {
